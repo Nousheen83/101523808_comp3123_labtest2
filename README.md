@@ -22,3 +22,7 @@ Styled Components
 
 ### Live Demo
 (https://101523808-comp3123-labtest2.vercel.app/)
+
+## 📸 Screenshots (Stored on Cloudinary)
+https://res.cloudinary.com/doaf09ev0/image/upload/v1764259554/output_siizmu.png
+https://res.cloudinary.com/doaf09ev0/image/upload/v1764259554/postman-response_fgy49j.png
