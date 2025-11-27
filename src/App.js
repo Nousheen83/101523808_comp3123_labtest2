@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import SearchBar from "./components/SearchBar";
+import WeatherCard from "./components/WeatherCard";
+import { getWeatherByCity } from "./api/weather";
 
 function App() {
+  const [city, setCity] = useState("Toronto");
+  const [weather, setWeather] = useState(null);
+
+const searchWeather = async () => {
+  try {
+    const response = await getWeatherByCity(city);
+    console.log("SUCCESS:", response.data);
+    setWeather(response.data);
+  } catch (err) {
+    console.log("ERROR:", err.response?.data || err.message);
+    alert("City not found or API error!");
+  }
+};
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <h1>Weather App</h1>
+
+      <SearchBar city={city} setCity={setCity} onSearch={searchWeather} />
+
+      <WeatherCard data={weather} />
     </div>
   );
 }
