@@ -20,8 +20,5 @@ React
 Axios  
 Styled Components  
 
-### Screenshots
-(INSERT IMAGES HERE — see bonus section below)
-
 ### Live Demo
 (https://101523808-comp3123-labtest2.vercel.app/)
